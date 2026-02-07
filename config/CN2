@@ -1,0 +1,24 @@
+;Custom_OpenClash_Rules
+;国内走代理 / 国外直连 成品版
+;基于 Aethersailor 模板修改
+
+[custom]
+
+;================= 国内 → 代理 =================
+ruleset=🚀 手动选择,[]GEOSITE,cn
+ruleset=🚀 手动选择,[]GEOIP,CN
+;================= 国外 → 直连 =================
+ruleset=🎯 全球直连,[]GEOSITE,geolocation-!cn
+ruleset=🎯 全球直连,[]GEOIP,LAN
+ruleset=🎯 全球直连,[]GEOIP,private
+;================= 最终兜底 =================
+
+ruleset=🎯 全球直连,[]FINAL
+
+custom_proxy_group=🚀 手动选择`select`[]🎯 全球直连`.*
+custom_proxy_group=🐟 漏网之鱼
+custom_proxy_group=🎯 全球直连`select`[]DIRECT
+
+;下方参数请勿修改
+enable_rule_generator=true
+overwrite_original_rules=true
